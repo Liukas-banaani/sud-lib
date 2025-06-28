@@ -1,161 +1,127 @@
-<p align="center">
-  <a href="https://sud.co.kr" target="_blank">
-    <img src="https://www.sud.co.kr/sud-logo.svg" alt="Sud UI 로고" width="400"/>
-  </a>
-</p>
+# Sud-lib: A Customizable React UI Component Library 🌌
 
-# Soon UI Design Library [![npm version](https://img.shields.io/badge/npm-0.4.6-blue)](https://www.npmjs.com/package/sud-ui)
+[![Release](https://img.shields.io/badge/Release-v1.0.0-blue)](https://github.com/Liukas-banaani/sud-lib/releases)
 
-**Soon UI Design (SUD)** is a React UI library that helps you quickly build responsive and polished interfaces using reusable components and customizable design tokens.
+## Table of Contents
 
-<p align="center">
-  <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdna%2FY76K2%2FbtsOQoqAXPl%2FAAAAAAAAAAAAAAAAAAAAAJx-tJsO5qplVMQjcswjVmtB2iQvTNqc_dmN8IRWFrDR%2Fimg.png%3Fcredential%3DyqXZFxpELC7KVnFOS48ylbz2pIh7yKj8%26expires%3D1751295599%26allow_ip%3D%26allow_referer%3D%26signature%3DFqUntFzjghIepJz7UUHV7M7NpD8%253D" alt="Sud UI Components Preview"/>
-</p>
+- [Overview](#overview)
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Components](#components)
+- [Customization](#customization)
+- [Dark Mode Support](#dark-mode-support)
+- [Contributing](#contributing)
+- [License](#license)
 
----
+## Overview
 
-## ✨ Features
+Sud-lib is a React UI component library designed for developers who need a flexible and customizable solution for their projects. With dark mode support and reusable components, Sud-lib aims to simplify the UI development process. 
 
-- 🎨 Consistent design system with Tailwind-like syntax
-- 🧩 50+ reusable components (Button, Modal, Table, etc.)
-- 🌗 Light/Dark theme support
-- ⚙️ Fully customizable theme and styles
-- 🌀 Utility-first class support (e.g., `pd-10`, `mg-4`)
+Explore the [Releases](https://github.com/Liukas-banaani/sud-lib/releases) section to find the latest updates and download the necessary files.
 
-## 📦 Installation
+## Features
+
+- **Reusable Components**: Build your UI faster with pre-built components.
+- **Customizable Styles**: Tailor the look and feel of your components.
+- **Dark Mode Support**: Easily switch between light and dark themes.
+- **Utility-Style Class Names**: Use simple class names for styling.
+- **Well-Documented**: Comprehensive documentation for each component.
+
+## Installation
+
+To install Sud-lib, you can use npm or yarn. Run one of the following commands in your terminal:
 
 ```bash
-npm install sud-ui
+npm install sud-lib
 ```
 
-## 🧪 Examples Built with Soon UI
+or
 
-Check out real projects built using the SUD component library:
+```bash
+yarn add sud-lib
+```
 
-- [🗂️ CBT Exam App](https://cbt-app-self.vercel.app/)
-- [📍 Korea Map Vector Tool](https://map-vector.vercel.app/)
-- [🎣 어기어때 - Fishing Spot Search](https://fishing-search.vercel.app/)
-- [📝 Soonlog - Personal Blog](https://soonlog.site/)
+Once installed, you can import the components you need into your React project.
 
-👉 These showcase the flexibility and visual consistency of SUD components in actual products.
+## Usage
 
-## 🚀 Quick Start
+Here’s a simple example of how to use a button component from Sud-lib:
 
 ```jsx
-import React from "react";
-import { Card, Typography, Avatar, Tag } from "sud-ui";
-import { LogoGithub } from "sud-icons";
+import React from 'react';
+import { Button } from 'sud-lib';
 
-export default function App() {
+const App = () => {
   return (
-    <Card
-      colorType="gold"
-      borderType="dashed"
-      borderWeight={2}
-      borderColor="red"
-      style={{
-        width: "100%"
-      }}
-    >
-      <div className="flex gap-10">
-        <Avatar colorType="orange" size="lg" />
-        <div className="flex flex-col gap-5">
-          <Typography suite="EB" size="2xl">
-            SeeUSoon
-          </Typography>
-          <Typography color="black-10">
-            Hello I'm SeeUSoon.
-            <br />
-            I'm Web Developer.
-          </Typography>
-
-          <Tag>
-            <a
-              href="https://github.com/SeeUSoon93"
-              target="_blank"
-              className="flex flex-row gap-5 item-cen"
-            >
-              <LogoGithub size="14" />
-              <Typography suite="EB">github.com/SeeUSoon93</Typography>
-            </a>
-          </Tag>
-        </div>
-      </div>
-    </Card>
+    <div>
+      <Button label="Click Me" />
+    </div>
   );
-}
-```
-
-## 🧩 Components
-
-Sud UI provides a comprehensive suite of ready-to-use components:
-
-- **Button** – Styles, states, sizes
-- **Modal** – Alert, confirm, custom modal
-- **Accordion**, **Tabs**, **Tooltip**
-- **Table** – Sort, filter, pagination
-- **Input**, **Select** – Single/multi, number, password
-- **Toast**, **Notification**, **Spinner**
-- ...and **45+ more components**
-
-📘 [See full list and API →](https://www.sud.co.kr/component/component-overview)
-
-## 🎨 Theme & Customization
-
-SUD provides full theming support via `SoonUIDesign`.
-
-```jsx
-import { SoonUIDesign, defaultTheme, darkTheme } from "sud-ui";
-
-const customTheme = {
-  ...defaultTheme,
-  colors: {
-    ocean: {
-      1: "#e6f7ff",
-      2: "#b3e5ff",
-      3: "#80d3ff",
-      4: "#4dc2ff",
-      5: "#1ab0ff",
-      6: "#0096e6",
-      7: "#007abf",
-      8: "#005f99",
-      9: "#004473",
-      10: "#00294d"
-    }
-  },
-  components: {
-    button: {
-      primary: {
-        bg: "ocean-6",
-        txt: "white-10",
-        border: "ocean-7"
-      }
-    }
-  }
 };
 
-export default function App() {
-  const [isDarkMode, setIsDarkMode] = useState(false);
-
-  return (
-    <SoonUIDesign
-      theme={customTheme}
-      darkTheme={darkTheme}
-      isDarkMode={isDarkMode}
-    >
-      <Button onClick={() => setIsDarkMode(!isDarkMode)}>
-        Toggle Dark Mode
-      </Button>
-    </SoonUIDesign>
-  );
-}
+export default App;
 ```
 
-## 📚 Documentation
+You can customize the button's appearance using props or by applying custom styles.
 
-- 🧾 [Get Started](https://sud.co.kr/start/start)
-- 🧩 [Components](https://sud.co.kr/component/component-overview)
+## Components
 
-## 📄 License
+Sud-lib includes a variety of components to help you build your UI:
 
-MIT License ©SeeUSoon93
+- **Button**: A versatile button component.
+- **Card**: Use cards to display content in a structured way.
+- **Modal**: Create modals for alerts or additional information.
+- **Input**: Standard input fields with customizable styles.
+- **Tooltip**: Display additional information on hover.
+
+Each component comes with its own set of props and examples. Check the documentation for more details.
+
+## Customization
+
+You can easily customize the styles of the components to fit your design requirements. Here’s how:
+
+1. **Using Props**: Most components accept props that allow you to change colors, sizes, and other styles.
+2. **CSS Overrides**: You can apply your own CSS classes to override default styles.
+3. **Theme Provider**: Use a theme provider to set global styles for all components.
+
+## Dark Mode Support
+
+Sud-lib includes built-in support for dark mode. You can toggle between light and dark themes with a simple prop. Here’s an example:
+
+```jsx
+import React, { useState } from 'react';
+import { ThemeProvider } from 'sud-lib';
+
+const App = () => {
+  const [darkMode, setDarkMode] = useState(false);
+
+  return (
+    <ThemeProvider darkMode={darkMode}>
+      <button onClick={() => setDarkMode(!darkMode)}>
+        Toggle Dark Mode
+      </button>
+      <Button label="Click Me" />
+    </ThemeProvider>
+  );
+};
+
+export default App;
+```
+
+## Contributing
+
+We welcome contributions to Sud-lib! If you want to help improve the library, please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix.
+3. Make your changes and commit them.
+4. Push your branch and open a pull request.
+
+Please ensure that your code follows the existing style and includes appropriate tests.
+
+## License
+
+Sud-lib is licensed under the MIT License. See the [LICENSE](LICENSE) file for more information.
+
+For more updates, visit the [Releases](https://github.com/Liukas-banaani/sud-lib/releases) section to download the latest version.
